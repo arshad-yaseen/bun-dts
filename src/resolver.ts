@@ -1,6 +1,6 @@
-import { dirname } from 'node:path'
 import process from 'node:process'
 import { ResolverFactory } from 'oxc-resolver'
+import { dirname } from 'pathe'
 import { JS_RE } from './re'
 import type { Resolve } from './types'
 import { isTypeScriptFile, returnPathIfExists } from './utils'

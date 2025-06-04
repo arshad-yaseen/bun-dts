@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
-import path from 'node:path'
 import type { BunPlugin } from 'bun'
 import { isolatedDeclaration } from 'oxc-transform'
+import path from 'pathe'
 import { resolveTsImportPath } from 'ts-import-resolver'
 import { dtsToFakeJs, fakeJsToDts } from './fake-js'
 import type { IsolatedDeclarationError } from './isolated-decl-error'
@@ -150,11 +150,9 @@ export async function generateDts(
 							getDeclarationExtension(getExtension(output.path)),
 						)
 					: undefined,
-			outputPath: cleanPath(
-				replaceExtension(
-					cleanPath(output.path).replace(`${cleanPath(tempOutDir)}/`, ''),
-					getDeclarationExtension(getExtension(output.path)),
-				),
+			outputPath: replaceExtension(
+				cleanPath(output.path).replace(`${tempOutDir}/`, ''),
+				getDeclarationExtension(getExtension(output.path)),
 			),
 			dts: dtsContent.code,
 			errors: collectedErrors,

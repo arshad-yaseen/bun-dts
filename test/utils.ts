@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { dirname, join } from 'pathe'
 import { type GenerateDtsOptions, generateDts } from '../src'
 
 const PROJECT_DIR = 'project/.test'

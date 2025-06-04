@@ -1,6 +1,6 @@
 import { existsSync } from 'node:fs'
-import { basename, dirname, extname, join, normalize } from 'node:path'
 import { type LoadConfigResult, loadConfig } from 'coffi'
+import { basename, dirname, extname, join, normalize } from 'pathe'
 import { isCI, isDevelopment } from 'std-env'
 import { TS_RE } from './re'
 
